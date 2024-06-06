@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activities.MainActivity">
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:text="Генератор паролей"
+        android:textSize="24dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <Button
+        android:id="@+id/generate_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginBottom="24dp"
+        android:text="Сгенерировать"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/copy_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        android:text="Скопировать"
+        app:layout_constraintBottom_toBottomOf="@+id/generate_button"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <CheckBox
+        android:id="@+id/russianLetterCheckbox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="24dp"
+        android:text="Русские буквы"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView" />
+
+    <CheckBox
+        android:id="@+id/engLetterCheckbox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Английские буквы"
+        app:layout_constraintStart_toStartOf="@+id/russianLetterCheckbox"
+        app:layout_constraintTop_toBottomOf="@+id/russianLetterCheckbox" />
+
+    <CheckBox
+        android:id="@+id/symbolsLetterCheckbox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Спецсимволы"
+        app:layout_constraintStart_toStartOf="@+id/engLetterCheckbox"
+        app:layout_constraintTop_toBottomOf="@+id/engLetterCheckbox" />
+
+    <CheckBox
+        android:id="@+id/numsLetterCheckbox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Цифры"
+        app:layout_constraintStart_toStartOf="@+id/symbolsLetterCheckbox"
+        app:layout_constraintTop_toBottomOf="@+id/symbolsLetterCheckbox" />
+
+    <View
+        android:id="@+id/divider"
+        android:layout_width="409dp"
+        android:layout_height="1dp"
+        android:layout_marginTop="24dp"
+        android:background="?android:attr/listDivider"
+        app:layout_constraintTop_toBottomOf="@+id/textView"
+        tools:layout_editor_absoluteX="1dp" />
+
+    <EditText
+        android:id="@+id/passwordLenthTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:ems="10"
+        android:hint="Длина пароля"
+        android:textSize="16dp"
+        android:inputType="number"
+        app:layout_constraintStart_toStartOf="@+id/numsLetterCheckbox"
+        app:layout_constraintTop_toBottomOf="@+id/numsLetterCheckbox" />
+
+    <EditText
+        android:id="@+id/password_count"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:ems="10"
+        android:hint="Количество вариантов"
+        android:inputType="number"
+        android:textSize="16dp"
+        app:layout_constraintStart_toStartOf="@+id/numsLetterCheckbox"
+        app:layout_constraintTop_toBottomOf="@+id/passwordLenthTextView" />
+
+    <TextView
+        android:id="@+id/generatedPasswordTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="50dp"
+        android:text="*тут будет сгенерированный пароль*"
+        app:layout_constraintBottom_toTopOf="@+id/generate_button"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
